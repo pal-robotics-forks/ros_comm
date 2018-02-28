@@ -137,8 +137,8 @@ def rostestRunner(test, test_pkg, results_base_dir=None):
             XML_OUTPUT_FLAG='--gtest_output=xml:' #use gtest-compatible flag
             
             test.args = "%s %s%s"%(test.args, XML_OUTPUT_FLAG, test_file)
+            test.output = 'screen'
             if _textMode:
-                test.output = 'screen'
                 test.args = test.args + " --text"
 
             # run the test, blocks until completion
